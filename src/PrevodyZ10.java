@@ -82,7 +82,9 @@ public class PrevodyZ10 {
             prevodCelyDo16(rozdeleniNaCely(cislo));
             System.out.print(".");
             prevodDesetinyhoCislaDo16(desetiny(cislo));
-            //System.out.println(cely+" "+desetiny);
+        }else{
+            System.out.print("0.");
+            prevodDesetinyhoCislaDo16(cislo);
         }
     }
 
