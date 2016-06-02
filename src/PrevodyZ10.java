@@ -253,10 +253,6 @@ public class PrevodyZ10 {
     public static class nactiCislo {
         Scanner sc = new Scanner(System.in);
 
-        nactiCislo() {
-
-        }
-
         double nacteniCisla() {
             return sc.nextDouble();
         }
