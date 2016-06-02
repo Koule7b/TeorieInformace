@@ -26,11 +26,11 @@
       <file leaf-file-name="PrevodyZ10.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PrevodyZ10.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+            <state relative-caret-position="103">
+              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
               <folding>
-                <element signature="e#2015#2016#0" expanded="true" />
-                <element signature="e#2061#2062#0" expanded="true" />
+                <element signature="e#8501#8502#0" expanded="true" />
+                <element signature="e#8547#8548#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -572,12 +572,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464880371740</updated>
-      <workItem from="1464880397972" duration="1858000" />
+      <workItem from="1464880397972" duration="6405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1858000" />
+    <option name="totallyTimeSpent" value="6405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -624,11 +624,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/PrevodyZ10.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        <state relative-caret-position="103">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding>
-            <element signature="e#2015#2016#0" expanded="true" />
-            <element signature="e#2061#2062#0" expanded="true" />
+            <element signature="e#8501#8502#0" expanded="true" />
+            <element signature="e#8547#8548#0" expanded="true" />
           </folding>
         </state>
       </provider>
