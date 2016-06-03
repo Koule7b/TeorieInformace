@@ -1,9 +1,11 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * Created by Koule7b on 2.6.2016.
  */
 public class PrevodyZ10 {
+    static ArrayList<Object> celeCislo;
     static double cislo;
     static int pocet = 0;
     static int pocet2 = 0;
@@ -19,7 +21,9 @@ public class PrevodyZ10 {
 
     public static void prevodDo2(double cislo) {
         if (cislo > 1) {
+            celeCislo = new ArrayList<>();
             prevodCelyhoCislaDo2(rozdeleniNaCely(cislo));
+            vypsaniCelyhoCisla(celeCislo);
             System.out.print(".");
             prevodDesitinyhoCislaDo2(desetiny(cislo));
         } else {
@@ -27,16 +31,20 @@ public class PrevodyZ10 {
             prevodDesitinyhoCislaDo2(cislo);
         }
     }
-
+    static void vypsaniCelyhoCisla(ArrayList<?> celyCislo){
+        for (int i = celyCislo.size() - 1; i >= 0; i--) {
+            System.out.print(celyCislo.get(i));
+        }
+    }
     private static void prevodCelyhoCislaDo2(int cislo) {
         if (cislo % 2 == 0) {
-            System.out.print(0);
+            celeCislo.add(0);
             cislo = cislo / 2;
             if (cislo == 0)
                 return;
             prevodCelyhoCislaDo2(cislo);
         } else {
-            System.out.print(1);
+            celeCislo.add(1);
             cislo = (cislo - 1) / 2;
             if (cislo == 0)
                 return;
@@ -79,7 +87,9 @@ public class PrevodyZ10 {
 
     static void prevodDo16(double cislo) {
         if (cislo > 1) {
+            celeCislo = new ArrayList<>();
             prevodCelyDo16(rozdeleniNaCely(cislo));
+            vypsaniCelyhoCisla(celeCislo);
             System.out.print(".");
             prevodDesetinyhoCislaDo16(desetiny(cislo));
         }else{
@@ -94,82 +104,82 @@ public class PrevodyZ10 {
             zbytek = cislo % 16;
             switch (zbytek) {
                 case 15:
-                    System.out.print("F");
+                    celeCislo.add("F");
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 14:
-                    System.out.print("E");
+                    celeCislo.add("E");
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 13:
-                    System.out.print("D");
+                    celeCislo.add("D");
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 12:
-                    System.out.print("C");
+                    celeCislo.add("C");
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 11:
-                    System.out.print("B");
+                    celeCislo.add("B");
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 10:
-                    System.out.print("A");
+                    celeCislo.add("A");
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 9:
-                    System.out.print(9);
+                    celeCislo.add(9);
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 8:
-                    System.out.print(8);
+                    celeCislo.add(8);
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 7:
-                    System.out.print(7);
+                    celeCislo.add(7);
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 6:
-                    System.out.print(6);
+                    celeCislo.add(6);
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 5:
-                    System.out.print(5);
+                    celeCislo.add(5);
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 4:
-                    System.out.print(4);
+                    celeCislo.add(4);
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 3:
-                    System.out.print(3);
+                    celeCislo.add(3);
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 2:
-                    System.out.print(2);
+                    celeCislo.add(2);
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 1:
-                    System.out.print(1);
+                    celeCislo.add(1);
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
                 case 0:
-                    System.out.print(0);
+                    celeCislo.add(0);
                     cislo = (cislo - zbytek) / 16;
                     prevodCelyDo16(cislo);
                     break;
