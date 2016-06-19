@@ -3,6 +3,8 @@ import sun.swing.SwingUtilities2;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -17,6 +19,8 @@ public class PocitaniZnakuVTextu {
     static ArrayList<Integer> pocty = new ArrayList<>();
     static ArrayList<Integer> dvojcePocet = new ArrayList<>();
     static ArrayList<Double> informace = new ArrayList<>();
+    static HashMap<Object, Double> map = new HashMap<>();
+    static HashMap<Object, Double> mapSera = new HashMap<>();
     static int pocetDvojceA = 0;
     static int pocetDvojceC = 0;
     static int pocetDvojceT = 0;
@@ -50,6 +54,11 @@ public class PocitaniZnakuVTextu {
         vypisPodminePravdepodobnosti(znaky);
         vypisInformace(znaky);
         podminenaInformace();
+        double[] pravd = new double[pravdepodobnosti.size()];
+        for (int i = 0; i < pravdepodobnosti.size(); i++) {
+            pravd[i] = pravdepodobnosti.get(i);
+        }
+        bubblesort(pravd);
     }
 
     static void vytvoreniDvojic() {
@@ -87,7 +96,38 @@ public class PocitaniZnakuVTextu {
             System.out.println(pocetVyskytu);
             pravdepodobnosti.add((double) pocetVyskytu / (double) celkovejPocet);
             System.out.println("Pravdepodobnost " + znaky.get(i) + " " + pravdepodobnosti.get(i) + " " + (double) pocetVyskytu / (double) celkovejPocet);
+            map.put(znaky.get(i), pravdepodobnosti.get(i));
         }
+        for (int i = 0; i < pocty.size(); i++) {
+            System.out.println(pocty);
+            System.out.println(znaky.get(i) + " " + map.get(znaky.get(i)));
+        }
+    }
+    static double[] bubblesort(double[] polle) {
+        Object[] znakySerazen = new Object[znaky.size()];
+        if (polle.length>1)
+        {
+            for (int x=0; x<polle.length-1; x++) // bubble sort outer loop
+            {
+                for (int i=0; i < polle.length - x - 1; i++) {
+                    if (polle[i] < polle[i+1])
+                    {
+                        double temp;
+                        temp = polle[i];
+                        polle[i] = polle[i + 1];
+                        znakySerazen[i] = znaky.get(i + 1);
+                        //mapSera.put(znakySerazen[i], polle[i]);
+                        polle[i + 1] = temp;
+                    }else{
+                        znakySerazen[i] = znaky.get(i);
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < polle.length; i++) {
+            System.out.println(znakySerazen[i]+" "+polle[i]);
+        }
+        return polle;
     }
 
     private static void poctyDvojic(ArrayList<?> text) {
@@ -194,7 +234,7 @@ public class PocitaniZnakuVTextu {
         int p = 0;
         for (int i = 0; i < znaky.size(); i++) {
             for (int j = 0; j < znaky.size(); j++) {
-                System.out.println(znaky.get(i) + " " + znaky.get(j) + " " +vnitrekLog(p, j));
+                System.out.println(znaky.get(i) + " " + znaky.get(j) + " " + vnitrekLog(p, j));
                 p++;
                 //vnitrekLog(p, j);
             }
@@ -220,14 +260,15 @@ public class PocitaniZnakuVTextu {
     }
 
     static void logaritmus2(double cislo, int znaminko) {
-        if(znaminko == 0) {
+        if (znaminko == 0) {
             informace.add((Math.log(cislo)) / (Math.log(2.0)));
             System.out.println((Math.log(cislo)) / (Math.log(2.0)));
-        }else{
+        } else {
             System.out.println(-((Math.log(cislo)) / (Math.log(2.0))));
         }
     }
-    static double vnitrekLog(int i, int k){
+
+    static double vnitrekLog(int i, int k) {
         return ((double) dvojcePocet.get(i) / (double) (celkovejPocet / 2) / pravdepodobnosti.get(k));
     }
 
@@ -236,7 +277,7 @@ public class PocitaniZnakuVTextu {
             //System.out.println(pravdepodobnosti.get(i));
             double vel = 1 / pravdepodobnosti.get(i);
             System.out.println(vel);
-            System.out.print("infor. "+pismena.get(i)+" ");
+            System.out.print("infor. " + pismena.get(i) + " ");
             logaritmus2(vel, 0);
         }
     }
@@ -245,7 +286,7 @@ public class PocitaniZnakuVTextu {
         int k = 0;
         for (int i = 0; i < znaky.size(); i++) {
             for (int j = 0; j < znaky.size(); j++) {
-                System.out.print("PI "+znaky.get(i)+" a "+znaky.get(j)+" = ");
+                System.out.print("PI " + znaky.get(i) + " a " + znaky.get(j) + " = ");
                 logaritmus2(vnitrekLog(k, j), 1);
                 k++;
             }
