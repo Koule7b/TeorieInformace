@@ -17,6 +17,7 @@ public class PrevodyZ10 {
         System.out.println(cislo);
         prevodDo2(cislo);
         prevodDo16(cislo);
+        System.out.print(Math.log(0.002));
     }
 
     public static void prevodDo2(double cislo) {

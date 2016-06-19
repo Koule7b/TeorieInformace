@@ -4,8 +4,7 @@ import java.util.ArrayList;
  * Created by Koule7b on 2.6.2016.
  */
 public class PrevodyZ2 {
-/**
-    static ArrayList<Object> celeCislo;
+    static ArrayList<Object> cisloCele = new ArrayList<>();
     static double cislo;
     static int pocet = 0;
     static int pocet2 = 0;
@@ -13,11 +12,13 @@ public class PrevodyZ2 {
     public static void main(String[] args) {
         System.out.println("napis cislo pro prevod");
         PrevodyZ10.nactiCislo nacteni = new PrevodyZ10.nactiCislo();
-        cislo = nacteni.nacteniCisla();
-        System.out.println(cislo);
-        prevodDo8(cislo);
-        prevodDo10(cislo);
-        prevodDo16(cislo);
+        while(!cisloCele.contains(2)) {
+            cisloCele.add(nacteni.nacteniCisla());
+        }
+        System.out.println(cisloCele);
+        //prevodDo8(cislo);
+        //prevodDo10(cislo);
+        //prevodDo16(cislo);
     }
     static void prevodDo10(double cislo){
         if(cislo > 1){
@@ -25,9 +26,9 @@ public class PrevodyZ2 {
                 prevodCelyhoDo10(celeCislo(cislo));
             }
             System.out.print(".");
-            prevodDesetinyho(desetiny(cislo));
+            //prevodDesetinyho(desetiny(cislo));
         }else{
-            prevodDesetinyho(cislo);
+            //prevodDesetinyho(cislo);
         }
     }
     static void prevodCelyhoDo10(int cislo){
@@ -41,6 +42,5 @@ public class PrevodyZ2 {
     static double desetiny(double cislo){
         return cislo - celeCislo(cislo);
     }
-*/
 }
 
